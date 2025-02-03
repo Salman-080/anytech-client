@@ -2,7 +2,7 @@
 const Partner = () => {
     return (
         <div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  px-8 lg:px-28 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  px-8 lg:px-28 gap-9 lg:gap-3">
                 <div className="w-[190px] h-full">
                     <img className="w-full h-full" src="/partnerlogo/logo1.png" alt="" />
                 </div>

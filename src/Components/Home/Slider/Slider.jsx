@@ -42,13 +42,13 @@ const Slider = () => {
       <h2 className="text-center text-lg text-[#1a79e7] font-semibold">TECHNOLOGY BUILT FOR YOU</h2>
       <h1 className="text-center text-2xl md:text-4xl lg:text-6xl font-semibold">The future of finance</h1>
 
-        <div className="flex gap-5  w-fit mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 px-1 gap-5  w-fit mx-auto ">
           {tabTexts?.map((tabTexts, index) => (
             <div
               onClick={() => handleTabClick(index)}
               key={index}
-              className={`hover:bg-blue-300 px-8 rounded-3xl text-xl py-3 cursor-pointer text-[#1a79e7] font-semibold ${
-                activeTab === index ? "bg-blue-300" : "bg-[#eeeeee]"
+              className={`hover:bg-blue-100 px-8 rounded-3xl text-xl text-center py-3 cursor-pointer text-[#1a79e7] font-semibold ${
+                activeTab === index ? "bg-blue-300" : "bg-white"
               } `}
             >
               {tabTexts}
@@ -74,7 +74,7 @@ const Slider = () => {
           }}
           ref={swiperRef}
         >
-          <SwiperSlide className="flex px-12 py-12 gap-4">
+          <SwiperSlide className="flex px-5 md:px-12 py-5 md:py-12 gap-4 flex-col lg:flex-row">
             <div className="space-y-8 text-left lg:w-[50%]">
               <h2 className="text-xl text-[#1a79e7] font-semibold">
                 Customer Focused
@@ -93,7 +93,7 @@ const Slider = () => {
                 behaviour and product marketing opportunities.
               </p>
             </div>
-            <div className=" h-[400px] lg:w-[50%] ">
+            <div className="h-[350px] w-[100%] md:h-[360px] md:w-[80%] lg:w-[50%] ">
               <img
                 className="w-full h-full rounded-2xl"
                 src="/sliderImg2.JPG"
@@ -101,7 +101,7 @@ const Slider = () => {
               />
             </div>
           </SwiperSlide>
-          <SwiperSlide className="flex px-12 py-12 gap-4">
+          <SwiperSlide className="flex px-5 md:px-12 py-5 md:py-12 gap-4 flex-col lg:flex-row">
             <div className="space-y-8 text-left lg:w-[50%]">
               <h2 className="text-xl text-[#1a79e7] font-semibold">
                 Customer Focused
@@ -120,7 +120,7 @@ const Slider = () => {
                 behaviour and product marketing opportunities.
               </p>
             </div>
-            <div className=" h-[400px] lg:w-[50%] ">
+            <div className="h-[350px] w-[100%] md:h-[360px] md:w-[80%] lg:w-[50%] ">
               <img
                 className="w-full h-full rounded-2xl"
                 src="/sliderImg1.png"
@@ -128,7 +128,7 @@ const Slider = () => {
               />
             </div>
           </SwiperSlide>
-          <SwiperSlide className="flex px-12 py-12 gap-4">
+          <SwiperSlide className="flex px-5 md:px-12 py-5 md:py-12 gap-4 flex-col lg:flex-row">
             <div className="space-y-8 text-left lg:w-[50%]">
               <h2 className="text-xl text-[#1a79e7] font-semibold">
                 Customer Focused
@@ -147,7 +147,7 @@ const Slider = () => {
                 behaviour and product marketing opportunities.
               </p>
             </div>
-            <div className=" h-[400px] lg:w-[50%] ">
+            <div className=" h-[350px] w-[100%] md:h-[360px] md:w-[80%] lg:w-[50%] ">
               <img
                 className="w-full h-full rounded-2xl"
                 src="/sliderImg3.JPG"
@@ -155,7 +155,7 @@ const Slider = () => {
               />
             </div>
           </SwiperSlide>
-          <SwiperSlide className="flex px-12 py-12 gap-4">
+          <SwiperSlide className="flex px-5 md:px-12 py-5 md:py-12 gap-4 flex-col lg:flex-row">
             <div className="space-y-8 text-left lg:w-[50%]">
               <h2 className="text-xl text-[#1a79e7] font-semibold">
                 Customer Focused
@@ -174,7 +174,7 @@ const Slider = () => {
                 behaviour and product marketing opportunities.
               </p>
             </div>
-            <div className=" h-[400px] lg:w-[50%] ">
+            <div className=" h-[350px] w-[100%] md:h-[360px] md:w-[80%] lg:w-[50%] ">
               <img
                 className="w-full h-full rounded-2xl"
                 src="/sliderImg4.JPG"
