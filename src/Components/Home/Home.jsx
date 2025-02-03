@@ -55,6 +55,19 @@ const Home = () => {
     document.addEventListener("mousedown", handleOutsideClick);
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
+   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+          
+          const x = (e.clientX / window.innerWidth - 0.1) * 10; 
+          const y = (e.clientY / window.innerHeight - 0.1) * 10;
+          setMousePosition({ x, y });
+        };
+    
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+      }, []);
   return (
     <div className="relative ">
       {/* banner */}
@@ -281,7 +294,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className=" absolute z-30 flex w-full lg:h-[300px] ">
+        <div className=" absolute z-30 flex w-full lg:h-[300px] transition-transform duration-800 ease-out " style={{ 
+            transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+          }}>
           <img
             className="w-[50%] object-cover movementone scale-200"
             src="/backgrounds/foreground2.png"

@@ -9,22 +9,27 @@ const About = () => {
 
   useEffect(() => {
     const images = imageRefs.current;
+    // console.log(images);
     const sensitivity = 0.3; 
     const returnSpeed = 0.1; 
+    
 
     const animate = () => {
       images.forEach((img, index) => {
         currentY.current[index] += (targetY.current[index] - currentY.current[index]) * returnSpeed;
         img.style.transform = `translateY(${currentY.current[index]}px)`;
+        
       });
+      
       animationFrame.current = requestAnimationFrame(animate);
     };
+    
 
     const handleScroll = (e) => {
       const delta = e.deltaY * sensitivity;
-      
      
       const multipliers = [-0.8, -0.6, -0.4, -0.2]; 
+      
       
       targetY.current = targetY.current.map((val, i) => {
         const newVal = val + delta * multipliers[i];
@@ -49,7 +54,9 @@ const About = () => {
 
   const setImageRef = (index) => (el) => {
     imageRefs.current[index] = el;
+   
   };
+  console.log(setImageRef);
   return (
     <div>
       <div className="px-8 lg:px-28">

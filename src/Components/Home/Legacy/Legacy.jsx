@@ -21,7 +21,7 @@ const Legacy = () => {
       <div
         className="bg-blue-800 px-8 lg:px-28 h-[520px] relative "
         style={{
-          clipPath: "polygon(0 0, 100% 40%, 100% 100%, 0 100%)", // উল্টানো ক্লিপ-পাথ
+          clipPath: "polygon(0 0, 100% 40%, 100% 100%, 0 100%)", 
         }}
       >
         <div className="absolute top-0 right-[20%] transition-transform duration-700 ease-out"
