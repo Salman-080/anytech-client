@@ -1,5 +1,22 @@
+import { useEffect, useState } from "react";
+
 const Legacy = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+          
+          const x = (e.clientX / window.innerWidth - 0.5) * 20; 
+          const y = (e.clientY / window.innerHeight - 0.5) * 20;
+          setMousePosition({ x, y });
+        };
+    
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+      }, []);
+
   return (
+    
     <div>
       <div
         className="bg-blue-800 px-8 lg:px-28 h-[520px] relative "
@@ -7,10 +24,16 @@ const Legacy = () => {
           clipPath: "polygon(0 0, 100% 40%, 100% 100%, 0 100%)", // উল্টানো ক্লিপ-পাথ
         }}
       >
-        <div className="absolute top-0 right-[20%]">
+        <div className="absolute top-0 right-[20%] transition-transform duration-700 ease-out"
+        style={{ 
+            transform: `translate(${-mousePosition.x}px, ${-mousePosition.y}px)`,
+          }}
+        >
           <img className="blur-xs" src="/legacyPattern2.png" alt="" />
         </div>
-        <div className="absolute top-[10%] ">
+        <div className="absolute top-[10%] transition-transform duration-700 ease-out" style={{ 
+            transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
+          }}>
           <img className="" src="/legacyPattern1.png" alt="" />
         </div>
         <div className="absolute top-[40%] text-white space-y-6">

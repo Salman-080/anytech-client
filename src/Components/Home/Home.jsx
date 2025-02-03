@@ -18,24 +18,6 @@ const Home = () => {
   const [langDropDown, setLangDropDown] = useState(false);
   const langDivRef=useRef();
 
-  const bannerRef = useRef(null);
-  const [transform, setTransform] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e) => {
-    const rect = bannerRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2; // -1 to 1
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2; // -1 to 1
-    
-    setTransform({
-      x: x * 40, // হরাইজন্টাল মাল্টিপ্লায়ার
-      y: y * 20  // ভার্টিক্যাল মাল্টিপ্লায়ার
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setTransform({ x: 0, y: 0 });
-  };
-
   useEffect(() => {
     const handleScrollValue = () => {
       const currentScrollValue =
@@ -74,9 +56,9 @@ const Home = () => {
     return ()=> document.removeEventListener("mousedown", handleOutsideClick);
   },[])
   return (
-    <div  className="relative">
+    <div className="relative">
       {/* banner */}
-      <div  
+      <div
         className={`bg-white w-full px-8 lg:px-28 top-0  z-50 py-6 transition-all duration-300 fixed text-blue-500 ${
           !showNavbar ? "opacity-0 invisible" : "opacity-100 visible"
         }`}
@@ -140,9 +122,6 @@ const Home = () => {
       </div>
 
       <div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      ref={bannerRef}
         className="bg-blue-900 h-[300px] md:h-[800px] lg:h-[620px] relative "
         style={{
           clipPath: "polygon(0 100%, 100% 91%, 100% 0, 0 0)", // Adjusted clip-path
@@ -207,27 +186,18 @@ const Home = () => {
           </div>
         </div>
 
-        <div className=" absolute z-30 flex w-full lg:h-[300px] transition-transform duration-300 ease-out">
+        <div className=" absolute z-30 flex w-full lg:h-[300px] ">
           <img
-          style={{ 
-            transform: `translateX(${transform.x}px) translateY(${-transform.y}px)` 
-          }}
-            className="w-[50%] object-cover movementone scale-200 transition-transform duration-300 ease-out"
+            className="w-[50%] object-cover movementone scale-200"
             src="/backgrounds/foreground2.png"
             alt=""
           />
           <img
-           style={{ 
-            transform: `translateX(${transform.x * 0.7}px) translateY(${-transform.y * 0.5}px)` 
-          }}
-            className="w-[25%] object-cover movementone transition-transform duration-300 ease-out "
+            className="w-[25%] object-cover movementone "
             src="/backgrounds/WaveLinesDesktop1.svg"
             alt=""
           />
           <img
-            style={{ 
-              transform: `translateX(${-transform.x}px) translateY(${-transform.y}px)` 
-            }}
             className="w-[25%] object-cover movementtwo "
             src="/backgrounds/foreground.png"
             alt=""
