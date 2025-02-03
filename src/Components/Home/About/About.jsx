@@ -9,8 +9,8 @@ const About = () => {
 
   useEffect(() => {
     const images = imageRefs.current;
-    const sensitivity = 0.15; // গতি কমবেশি করার জন্য
-    const returnSpeed = 0.1; // ফেরার গতি
+    const sensitivity = 0.15; 
+    const returnSpeed = 0.1; 
 
     const animate = () => {
       images.forEach((img, index) => {
@@ -23,15 +23,15 @@ const About = () => {
     const handleScroll = (e) => {
       const delta = e.deltaY * sensitivity;
       
-      // প্রতিটি ছবির জন্য আলাদা মাল্টিপ্লায়ার
+     
       const multipliers = [-0.8, -0.6, -0.4, -0.2]; 
       
       targetY.current = targetY.current.map((val, i) => {
         const newVal = val + delta * multipliers[i];
-        return Math.max(-50, Math.min(50, newVal)); // সীমা নির্ধারণ
+        return Math.max(-50, Math.min(50, newVal)); 
       });
 
-      // স্ক্রোল স্টপ ডিটেক্ট
+     
       clearTimeout(scrollTimeout.current);
       scrollTimeout.current = setTimeout(() => {
         targetY.current = [0, 0, 0, 0];

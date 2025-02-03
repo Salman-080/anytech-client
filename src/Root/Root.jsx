@@ -20,7 +20,7 @@ const Root = () => {
     };
   }, []);
   return (
-    <div className="max-w-[2000px] mx-auto  bg-white">
+    <div className="max-w-[2000px] mx-auto overflow-x-hidden bg-white">
       <Outlet></Outlet>
 
 
