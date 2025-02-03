@@ -158,7 +158,7 @@ const Home = () => {
               <li
                 onMouseEnter={() => setDropDown(true)}
                 onMouseLeave={() => setDropDown(false)}
-                className="cursor-pointer text-lg flex items-center gap-2 relative"
+                className="cursor-pointer text-lg flex items-center gap-2 relative "
               >
                 Solutions <IoIosArrowDown></IoIosArrowDown>
                 {dropDown && (
@@ -249,8 +249,8 @@ const Home = () => {
                     </div>
                   )}
                 </li>
-                <li className="text-lg cursor-pointer">Services</li>
-                <li className="text-lg cursor-pointer">About Us</li>
+                <li className="text-lg cursor-pointer hover:underline hover:decoration-2 hover:underline-offset-6 ">Services</li>
+                <li className="text-lg cursor-pointer hover:underline hover:decoration-2 hover:underline-offset-6">About Us</li>
                 <li
                   ref={langDivRef}
                   onClick={() => setLangDropDown(!langDropDown)}
