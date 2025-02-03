@@ -1,3 +1,8 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+
 const Philosophy = () => {
   return (
     <div className="space-y-5">
@@ -95,8 +100,10 @@ const Philosophy = () => {
       <br />
       <br />
 
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-8 lg:px-36">
-        <div className="bg-[#f8fcff] px-7 py-8 space-y-5 rounded-xl">
+        <div className="bg-[#f8fcff] px-7 py-8 space-y-5 rounded-xl " data-aos="fade-up"
+     data-aos-duration="3000"  data-aos-delay="0">
           <div>
             <img src="/icon1.png" alt="" />
           </div>
@@ -106,7 +113,8 @@ const Philosophy = () => {
             payment functions with our comprehensive suite of solutions.
           </p>
         </div>
-        <div className="bg-[#f8fcff] px-7 py-8 space-y-5 rounded-xl">
+        <div className="bg-[#f8fcff] px-7 py-8 space-y-5 rounded-xl" data-aos="fade-up"
+     data-aos-duration="3000"  data-aos-delay="300">
           <div>
             <img src="/icon2.png" alt="" />
           </div>
@@ -116,7 +124,8 @@ const Philosophy = () => {
             payment functions with our comprehensive suite of solutions.
           </p>
         </div>
-        <div className="bg-[#f8fcff] px-7 py-8 space-y-5 rounded-xl">
+        <div className="bg-[#f8fcff] px-7 py-8 space-y-5 rounded-xl" data-aos="fade-up"
+     data-aos-duration="3000"  data-aos-delay="600">
           <div>
             <img src="/icon3.png" alt="" />
           </div>
