@@ -244,7 +244,7 @@ const Home = () => {
                   className="cursor-pointer text-lg border rounded-3xl px-4 py-1 flex justify-center items-center gap-2"
                 >
                   <TbWorld />
-                  EN{" "}
+                  EN
                   <IoIosArrowDown
                     className={`duration-200 ${
                       langDropDown ? "rotate-180" : ""
@@ -253,18 +253,22 @@ const Home = () => {
                   {langDropDown && (
                     <div
                       onClick={(e) => e.stopPropagation()}
-                      className=" flex flex-col gap-2 space-y-1 absolute top-[80%] text-black bg-white items-center py-2 rounded-md"
+                      className=" flex flex-col gap-2 space-y-1 absolute top-[80%] text-black bg-white items-start py-2 rounded-md"
                     >
                       <h4 className="pl-3 pr-16 text-gray-800 cursor-pointer">
-                        AnyCaas
+                      EN (English)
+                      </h4>
+                      <hr className="w-full text-gray-200" />
+                      <h4 className="pl-3 pr-16 text-gray-800 cursor-pointer">
+                      TH (Thai)
                       </h4>
                       <hr className="w-full text-gray-200" />
                       <h4 className=" pl-3 pr-16 text-gray-800 cursor-pointer">
-                        AnyBaas
+                      ID (Bahasa Indonesia)
                       </h4>
                       <hr className="w-full text-gray-200" />
                       <h4 className=" pl-3 pr-16 text-gray-800 cursor-pointer">
-                        AnyPaas
+                      TW (Traditional Chinese)
                       </h4>
                     </div>
                   )}
@@ -302,7 +306,7 @@ const Home = () => {
             Reimagine financial services with AnyTech’s open platform,
             distributed <br /> banking solution that powers transformation
           </p>
-          <button className="bg-orange-400 px-3 py-2 md:px-11 md:py-3 font-medium md:font-semibold text-xl text-white">
+          <button className="cursor-pointer bg-orange-400 px-3 py-2 md:px-11 md:py-3 font-medium md:font-semibold text-xl text-white">
             Reach Out Us {">"}
           </button>
         </div>

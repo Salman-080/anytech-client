@@ -9,7 +9,7 @@ const About = () => {
 
   useEffect(() => {
     const images = imageRefs.current;
-    const sensitivity = 0.15; 
+    const sensitivity = 0.3; 
     const returnSpeed = 0.1; 
 
     const animate = () => {
